@@ -92,8 +92,6 @@ alias zshreload="source ~/.zshrc"
 alias view="vim -R "
 alias to="teamocil --here"
 
-alias tp='gtypist'
-
 alias fuck='eval $(thefuck $(fc -ln -1))'
 
 alias gitroot='cd $(git rev-parse --show-cdup)'
@@ -116,11 +114,6 @@ alias se='SUDO_EDITOR="emacsclient -t" sudo -e'
 # syntax highlight cat
 alias ccat='pygmentize -g -O bg=dark'
 alias pylint='pylint --output-format=colorized'
-
-alias igms='igor mysql'
-alias igdp='igor deploy -nc'
-alias igop='igor open'
-alias iglt='igor log.tail'
 
 # svn
 function svn_repo {
@@ -146,9 +139,6 @@ alias gpt='git push && git push --tags'
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 alias gcam='git commit -am '
 alias gcm='git commit -m '
-alias gitproxy='export GIT_PROXY_COMMAND="~/bin/proxy-wrapper"'
-alias ungitproxy='export GIT_PROXY_COMMAND=""'
-alias gsfpl='git submodule foreach git pull'
 alias gdlast='git diff HEAD^ HEAD'
 
 alias ra='ranger'
@@ -172,33 +162,14 @@ custom_tmux() {
 }
 
 alias tmux='tmux -2'
-alias tmt='tmux -2 attach -t '
 alias tmb='tmux -2 attach -t normaltask || tmux -2 new -s normaltask'
-alias tmc='tmux -2 attach -t quantor || tmux -2 new -s quantor'
 alias tmn=custom_tmux
-
-
-alias ms='mysql -u root'
-alias msgbk='luit -encoding gbk mysql -u root'
 
 # Easily search running processes (alias).
 alias 'psg'='ps auxf | grep '
 alias 'psl'='ps awwfux | less -S'
 
-# apt-get
-alias ai='sudo apt-get install '
-
-# display
-alias single-display="xrandr --output VGA-0 --off"
-alias double-display="xrandr --output VGA-0 --left-of LVDS-0 --auto"
-
-# goagent
-alias goagent="export http_proxy=127.0.0.1:8087 && export https_proxy=127.0.0.1:8087"
-alias ungoagent="export http_proxy= && export https_proxy="
-
-# ssh
-alias sshproxy="cp ~/.ssh/config-proxy ~/.ssh/config"
-alias unsshproxy="rm ~/.ssh/config"
+alias workon='source activate'
 
 # safe rm
 #alias rm="trash-put"
@@ -286,7 +257,6 @@ alias man=vman                  # use \man to invoke original man
 alias matrix='tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
 
 
-
 if [ -d "/usr/local/opt/coreutils/libexec/gnubin" ] ; then
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 fi
@@ -294,17 +264,6 @@ if [ -d "/usr/local/opt/coreutils/libexec/gnuman" ] ; then
     MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 # export LC_CTYPE="zh_CN.UTF-8"
-
-if [ -d "/usr/lib/jvm/jdk7" ] ; then
-    export JAVA_HOME=/usr/lib/jvm/jdk7
-    export JRE_HOME=${JAVA_HOME}/jre
-    export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
-    export PATH=${JAVA_HOME}/bin:$PATH
-
-    # Android SDK
-    export ANDROID_SDK=$HOME/adt-bundle-linux-x86_64-20131030/sdk
-    export PATH=$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$PATH
-fi
 
 export PATH=${JAVA_HOME}/bin:$PATH
 
@@ -320,39 +279,6 @@ fi
 
 export SVN_EDITOR=vim
 export EDITOR=vim
-
-export COCOS_CONSOLE_ROOT=$HOME/cocos2d-x/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
-export ANDROID_SDK_ROOT=$HOME/adt-bundle-mac-x86_64-20131030/sdk
-export ANDROID_HOME=$ANDROID_SDK_ROOT
-export PATH=$ANDROID_SDK_ROOT:$PATH
-export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
-export ANT_ROOT=/usr/local/bin/
-export PATH=$ANT_ROOT:$PATH
-
-if [ -d "$HOME/android-ndk/android-ndk-r9d/" ]; then
-    export NDK_ROOT="$HOME/android-ndk/android-ndk-r9d/"
-    export NDKROOT=$NDK_ROOT
-    export ANDROID_NDK_ROOT=$NDK_ROOT
-    export PATH=$NDK_ROOT:$PATH
-fi
-if [ -d "$HOME/adt-bundle-mac-x86_64-20131030/sdk" ]; then
-    export ANDROID_SDK_ROOT=$HOME/adt-bundle-mac-x86_64-20131030/sdk
-fi
-
-# flash
-if [ -d "$HOME/AIRSDK_Compiler/bin" ]; then
-    export PATH=$HOME/AIRSDK_Compiler/bin:$PATH
-fi
-
-# add by quick-cocos2d-x setup, DATE: 2014-11-05 TIME: 14:22:56
-if [ -f "$HOME/.QUICK_COCOS2DX_ROOT" ]; then
-    export QUICK_COCOS2DX_ROOT=`cat ~/.QUICK_COCOS2DX_ROOT`
-fi
-if [ -f "$HOME/.QUICK_V3_ROOT" ]; then
-    export QUICK_V3_ROOT=`cat ~/.QUICK_V3_ROOT`
-fi
-
 
 random-string()
 {
