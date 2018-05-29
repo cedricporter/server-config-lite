@@ -55,7 +55,11 @@ export SHELL=zsh
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(vagrant brew bundler encode64 git git-flow github gem npm osx cake svn command-not-found autojump coffee pip pep8 python ruby rvm tmux supervisor debian )
+plugins=(
+encode64 git git-flow github gem npm osx cake svn command-not-found autojump 
+coffee pip pep8 python ruby rvm tmux supervisor debian 
+zsh-syntax-highlighting zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -140,6 +144,8 @@ alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%
 alias gcam='git commit -am '
 alias gcm='git commit -m '
 alias gdlast='git diff HEAD^ HEAD'
+alias grep='grep --line-buffered --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+
 alias grep='grep --line-buffered --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 
 alias ra='ranger'
