@@ -140,6 +140,7 @@ alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%
 alias gcam='git commit -am '
 alias gcm='git commit -m '
 alias gdlast='git diff HEAD^ HEAD'
+alias grep='grep --line-buffered --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 
 alias ra='ranger'
 alias i='info'
