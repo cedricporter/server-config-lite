@@ -169,7 +169,7 @@ custom_tmux() {
 }
 
 alias tmux='tmux -2'
-alias tmb='tmux -2 attach -t normaltask || tmux -2 new -s normaltask'
+alias tmb='tmux -2 attach -t $(hostname) || tmux -2 new -s $(hostname)'
 alias tmn=custom_tmux
 
 # Easily search running processes (alias).
