@@ -31,7 +31,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="ys"  #"robbyrussell"
 
 # export TERM=xterm-256color
-export SHELL=zsh
+export SHELL=/bin/zsh
 
 
 # Set to this to use case-sensitive completion
