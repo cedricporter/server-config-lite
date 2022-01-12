@@ -56,7 +56,7 @@ export SHELL=/bin/zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
-encode64 git git-flow github gem npm osx cake svn command-not-found autojump 
+encode64 git git-flow github gem npm cake svn command-not-found autojump 
 coffee pip pep8 python ruby rvm tmux supervisor debian 
 zsh-syntax-highlighting zsh-autosuggestions
 )
